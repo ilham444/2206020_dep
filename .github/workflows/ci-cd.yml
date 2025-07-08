@@ -32,9 +32,9 @@ jobs:
       - name: Add execute permissions to phpunit
         run: chmod +x ./vendor/bin/phpunit
 
-      # Langkah yang sebelumnya gagal, sekarang seharusnya berhasil
       - name: Run PHPUnit tests
-        run: ./vendor/bin/phpunit
+        run: ./vendor/bin/phpunit --configuration phpunit.xml
+
 
       # Langkah 3: Login ke Docker Hub menggunakan secrets yang sudah kita buat
       - name: Login to Docker Hub
