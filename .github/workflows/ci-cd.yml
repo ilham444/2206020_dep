@@ -26,11 +26,12 @@ jobs:
       - name: Install Composer dependencies
         run: composer install --prefer-dist --no-progress
 
-      # === BAGIAN 1: UNIT TEST ===
-
-      # Langkah BARU: Berikan izin eksekusi pada file phpunit
       - name: Add execute permissions to phpunit
         run: chmod +x ./vendor/bin/phpunit
+
+      # LANGKAH DEBUGGING BARU
+      - name: List files in the root directory
+        run: ls -la
 
       - name: Run PHPUnit tests
         run: ./vendor/bin/phpunit --configuration phpunit.xml
