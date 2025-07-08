@@ -1,0 +1,21 @@
+{
+    "name": "ilhammaulana/uaspkpl",
+    "description": "Proyek UAS Praktikum KPL menggunakan Composer",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Ilham Maulana",
+            "email": "youremail@example.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.5"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
