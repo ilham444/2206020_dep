@@ -27,6 +27,12 @@ jobs:
         run: composer install --prefer-dist --no-progress
 
       # === BAGIAN 1: UNIT TEST ===
+
+      # Langkah BARU: Berikan izin eksekusi pada file phpunit
+      - name: Add execute permissions to phpunit
+        run: chmod +x ./vendor/bin/phpunit
+
+      # Langkah yang sebelumnya gagal, sekarang seharusnya berhasil
       - name: Run PHPUnit tests
         run: ./vendor/bin/phpunit
 
@@ -48,9 +54,6 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          # Tagging image:
-          # 1. Menggunakan username/nama-repo:latest
-          # 2. Menggunakan username/nama-repo:commit-sha (untuk versi spesifik)
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/uaspkpl:latest
             ${{ secrets.DOCKERHUB_USERNAME }}/uaspkpl:${{ github.sha }}
