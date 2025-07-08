@@ -1,0 +1,25 @@
+<?php
+use PHPUnit\Framework\TestCase;
+
+class SimpleTest extends TestCase
+{
+    // Test 1: Memastikan logika dasar PHPUnit berjalan
+    public function test_true_is_true(): void
+    {
+        $this->assertTrue(true);
+    }
+
+    // Test 2: Memastikan file penting ada di dalam proyek
+    public function test_header_file_exists(): void
+    {
+        $this->assertFileExists('templates/header.php');
+    }
+
+    public function test_footer_file_exists(): void
+    {
+        $this->assertFileExists('templates/footer.php');
+    }
+    public function test_dockerfile_exists(): void
+    {
+        $this->assertFileExists('Dockerfile');
+    }
